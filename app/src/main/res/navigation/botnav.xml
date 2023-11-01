@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/botnav"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.mobile_p9_tugas_bottomnav.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.mobile_p9_tugas_bottomnav.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/ticketFragment"
+        android:name="com.example.mobile_p9_tugas_bottomnav.TicketFragment"
+        android:label="fragment_ticket"
+        tools:layout="@layout/fragment_ticket" >
+        <action
+            android:id="@+id/action_ticketFragment2_to_orderTicketFragment"
+            app:destination="@id/orderTicketFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/orderTicketFragment"
+        android:name="com.example.mobile_p9_tugas_bottomnav.SelectTicketFragment"
+        android:label="fragment_order_ticket"
+        tools:layout="@layout/fragment_select_ticket" >
+        <action
+            android:id="@+id/action_orderTicketFragment_to_chooseTicketFragment"
+            app:destination="@id/chooseTicketFragment" />
+
+
+    </fragment>
+    <fragment
+        android:id="@+id/chooseTicketFragment"
+        android:name="com.example.mobile_p9_tugas_bottomnav.SpinnerMenuTicketFragment"
+        android:label="fragment_choose_ticket"
+        tools:layout="@layout/fragment_spinner_ticket" />
+</navigation>
